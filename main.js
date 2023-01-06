@@ -4,6 +4,7 @@ nosey=0;
 
 
 function preload(){
+    clown_nose=loadImage('https://i.postimg.cc/pV0Zpj71/clown-nose-png-banner-free-zoya-nail-polish-11562929643mcuxnpgdb2.png')
 }
 function setup(){
     canvas= createCanvas(300,300);
@@ -19,7 +20,7 @@ function gotposes(results){
 if(results.length>0){
 console.log(results);
 nosex=results[0].pose.nose.x;
-nosey=result[0].pose.nose.y;
+nosey=results[0].pose.nose.y;
 console.log ("nose x" +nosex);
 console.log ("nose y" + nosey);
 }
@@ -31,9 +32,10 @@ function draw(){
     
     image(video,0,0,300,300);
 
-    fill(48,213,200);
-    stroke(48,213,200)
-    circle(nosex,nosey,20);
+    // fill(48,213,200);
+    //stroke(48,213,200)
+    //circle(nosex,nosey,20);
+    image(clown_nose,nosex,nosey,30,30)
 }
 function take_snapshot(){
     save('myFilterImage.png');
